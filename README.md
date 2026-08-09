@@ -1,5 +1,11 @@
 # Google Maps Gateway
 
+## Develop branch status
+
+**Repository skeleton; not part of the runtime catalogue or Docker Compose.** No callable API, provider client, configuration, database, or local port is implemented on `develop`; the text below describes an intended boundary rather than current runtime behaviour.
+
+Do not treat richer feature-branch commute work as released architecture. See the central [location status](https://docs.jobseekercopilot.com/journeys/location/) and [implementation status](https://docs.jobseekercopilot.com/reference/implementation-status/).
+
 The only Job Seeker Copilot service permitted to call Google Places API (New)
 and Routes API. It owns Google credentials, provider DTOs, request field masks,
 session-token handling, quota/billable-event metrics and provider response
@@ -77,4 +83,3 @@ Copyright © 2026 Bernard McGeever. All rights reserved.
 This repository contains proprietary software belonging to Bernard McGeever.
 It may not be used, copied, modified or distributed without express written
 permission. See [LICENSE](./LICENSE).
-

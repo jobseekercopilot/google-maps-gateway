@@ -1,0 +1,14 @@
+target/*
+*.jar
+!target/*-1.0.0-SNAPSHOT.jar
+*.class
+*.log
+.mvn/
+mvnw
+mvnw.cmd
+.git/
+.github/
+.idea/
+.vscode/
+.DS_Store
+

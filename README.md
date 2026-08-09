@@ -60,6 +60,18 @@ reviewed snapshot and generates its client into disposable Maven build output.
 
 Every application endpoint requires `X-Service-Token`; health endpoints do not.
 Provider responses, route results and Google address content remain transient.
+Place resolution requests only `id` and `addressComponents`; Google coordinates,
+formatted addresses, names and place types are deliberately not requested.
+
+## Data retention and attribution
+
+- A Google Place ID may cross the boundary for durable provider-reference storage.
+- Autocomplete labels, address components and provider responses are transaction-only.
+- Route distance, duration and response payloads are response-only and must not be
+  written to profiles, saved jobs, analytics or logs.
+- Any Places or Routes content shown without a Google map must be visibly attributed
+  to `Google Maps` in the same content container. Public product Terms and Privacy
+  notices must link to Google's applicable Terms and Privacy Policy.
 
 ## Build
 

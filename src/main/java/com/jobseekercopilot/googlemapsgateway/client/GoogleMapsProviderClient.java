@@ -23,7 +23,7 @@ public class GoogleMapsProviderClient {
     private static final String AUTOCOMPLETE_FIELD_MASK =
             "suggestions.placePrediction.placeId,suggestions.placePrediction.text," +
             "suggestions.placePrediction.structuredFormat,suggestions.placePrediction.types";
-    private static final String DETAILS_FIELD_MASK = "id,addressComponents,location,types";
+    private static final String DETAILS_FIELD_MASK = "id,addressComponents";
     private static final String MATRIX_FIELD_MASK =
             "originIndex,destinationIndex,status,condition,distanceMeters,duration";
     private static final BigDecimal METERS_PER_MILE = new BigDecimal("1609.344");

@@ -2,9 +2,17 @@
 
 ## Develop branch status
 
-**Repository skeleton; not part of the runtime catalogue or Docker Compose.** No callable API, provider client, configuration, database, or local port is implemented on `develop`; the text below describes an intended boundary rather than current runtime behaviour.
+**Implemented and composed, disabled by default.** The internal API, provider
+client, configuration, service-token boundary and transient session store are
+on `develop` and present in the Infrastructure runtime catalogue. The
+`google-maps-smoke` and `real-providers` profiles can enable the provider
+deliberately; ordinary fixture/E2E profiles do not call Google.
 
-Do not treat richer feature-branch commute work as released architecture. See the central [location status](https://docs.jobseekercopilot.com/journeys/location/) and [implementation status](https://docs.jobseekercopilot.com/reference/implementation-status/).
+A bounded browser-to-Google autocomplete completed in the manual environment
+on 11 August 2026. That proves integration, not provider reliability,
+production quota readiness or privacy/legal approval. See the central
+[location status](https://docs.jobseekercopilot.com/journeys/location/) and
+[implementation status](https://docs.jobseekercopilot.com/reference/implementation-status/).
 
 The only Job Seeker Copilot service permitted to call Google Places API (New)
 and Routes API. It owns Google credentials, provider DTOs, request field masks,

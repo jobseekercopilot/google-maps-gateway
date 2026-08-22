@@ -1,5 +1,19 @@
 # Google Maps Gateway
 
+## Develop branch status
+
+**Implemented and composed, disabled by default.** The internal API, provider
+client, configuration, service-token boundary and transient session store are
+on `develop` and present in the Infrastructure runtime catalogue. The
+`google-maps-smoke` and `real-providers` profiles can enable the provider
+deliberately; ordinary fixture/E2E profiles do not call Google.
+
+A bounded browser-to-Google autocomplete completed in the manual environment
+on 11 August 2026. That proves integration, not provider reliability,
+production quota readiness or privacy/legal approval. See the central
+[location status](https://docs.jobseekercopilot.com/journeys/location/) and
+[implementation status](https://docs.jobseekercopilot.com/reference/implementation-status/).
+
 The only Job Seeker Copilot service permitted to call Google Places API (New)
 and Routes API. It owns Google credentials, provider DTOs, request field masks,
 session-token handling, quota/billable-event metrics and provider response
@@ -54,6 +68,18 @@ reviewed snapshot and generates its client into disposable Maven build output.
 
 Every application endpoint requires `X-Service-Token`; health endpoints do not.
 Provider responses, route results and Google address content remain transient.
+Place resolution requests only `id` and `addressComponents`; Google coordinates,
+formatted addresses, names and place types are deliberately not requested.
+
+## Data retention and attribution
+
+- A Google Place ID may cross the boundary for durable provider-reference storage.
+- Autocomplete labels, address components and provider responses are transaction-only.
+- Route distance, duration and response payloads are response-only and must not be
+  written to profiles, saved jobs, analytics or logs.
+- Any Places or Routes content shown without a Google map must be visibly attributed
+  to `Google Maps` in the same content container. Public product Terms and Privacy
+  notices must link to Google's applicable Terms and Privacy Policy.
 
 ## Build
 
@@ -77,4 +103,3 @@ Copyright © 2026 Bernard McGeever. All rights reserved.
 This repository contains proprietary software belonging to Bernard McGeever.
 It may not be used, copied, modified or distributed without express written
 permission. See [LICENSE](./LICENSE).
-
